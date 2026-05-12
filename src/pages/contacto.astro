@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import ContactForm from '../components/ContactForm.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Contacto · Grilli Abogados" description="Contáctenos en Temuco. Consulta legal sin costo inicial. Antonio Varas 989, Of. 804 — Tel: 9 9642 6402.">
@@ -16,7 +17,7 @@ import ContactForm from '../components/ContactForm.astro';
     </div>
     <div class="max-w-6xl mx-auto px-6 py-16 relative">
       <nav class="flex items-center gap-2 text-white/40 text-xs font-inter mb-8">
-        <a href="/" class="hover:text-gold transition-colors">Inicio</a>
+        <a href={base} class="hover:text-gold transition-colors">Inicio</a>
         <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         <span class="text-gold">Contacto</span>
       </nav>

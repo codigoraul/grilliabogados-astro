@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import WhatsAppFloat from '../../components/WhatsAppFloat.astro';
 import { services } from '../../data/services';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Servicios · Grilli Abogados" description="Conozca todos los servicios jurídicos, de mediación y selección de personal que ofrece Grilli Abogados en Temuco.">
@@ -17,7 +18,7 @@ import { services } from '../../data/services';
     <div class="max-w-6xl mx-auto px-6 py-20 relative">
       <!-- Breadcrumb -->
       <nav class="flex items-center gap-2 text-white/40 text-xs font-inter mb-8">
-        <a href="/" class="hover:text-gold transition-colors">Inicio</a>
+        <a href={base} class="hover:text-gold transition-colors">Inicio</a>
         <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         <span class="text-gold">Servicios</span>
       </nav>
@@ -45,7 +46,7 @@ import { services } from '../../data/services';
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((s, i) => (
           <a
-            href={`/servicios/${s.slug}`}
+            href={`${base}servicios/${s.slug}`}
             class="group bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-lg transition-all duration-400 hover:-translate-y-1.5 flex flex-col"
             style={`animation-delay: ${i * 80}ms`}
           >
@@ -112,7 +113,7 @@ import { services } from '../../data/services';
       <h2 class="font-cinzel text-white text-3xl mb-4">¿No sabe qué área necesita?</h2>
       <p class="text-white/60 text-lg mb-8 leading-relaxed">Cuéntenos su situación y le orientaremos hacia la mejor estrategia legal, sin costo inicial.</p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="/contacto" class="btn-gold px-8 py-4 text-sm">Consulta gratuita</a>
+        <a href={`${base}contacto`} class="btn-gold px-8 py-4 text-sm">Consulta gratuita</a>
         <a
           href="https://wa.me/56996426402?text=Hola%2C%20necesito%20orientaci%C3%B3n%20legal."
           target="_blank"

@@ -14,6 +14,7 @@ const { service } = Astro.props;
 const related = getRelated(service.related);
 const isAccent = service.highlightAccent;
 const accentColor = '#D1B787';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title={`${service.title} · Grilli Abogados`} description={service.shortDesc}>
@@ -33,9 +34,9 @@ const accentColor = '#D1B787';
     <div class="absolute top-[100px] left-0 right-0">
       <div class="max-w-6xl mx-auto px-6">
         <nav class="flex items-center gap-2 text-white/50 text-xs font-inter">
-          <a href="/" class="hover:text-gold transition-colors">Inicio</a>
+          <a href={base} class="hover:text-gold transition-colors">Inicio</a>
           <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-          <a href="/servicios" class="hover:text-gold transition-colors">Servicios</a>
+          <a href={`${base}servicios`} class="hover:text-gold transition-colors">Servicios</a>
           <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
           <span class="text-gold">{service.title}</span>
         </nav>
@@ -122,6 +123,7 @@ const accentColor = '#D1B787';
           <!-- WhatsApp CTA -->
           <a
             href={`https://wa.me/56996426402?text=Hola%2C%20necesito%20asesor%C3%ADa%20en%20${encodeURIComponent(service.title)}.`}
+
             target="_blank"
             class="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold text-sm px-7 py-4 rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-0.5"
           >
@@ -156,7 +158,7 @@ const accentColor = '#D1B787';
         <div class="gold-divider mb-10"></div>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {related.map(rel => (
-            <a href={`/servicios/${rel.slug}`} class="group block bg-cream-pale rounded-2xl overflow-hidden shadow-card hover:shadow-card-lg transition-all duration-300 hover:-translate-y-1">
+            <a href={`${base}servicios/${rel.slug}`} class="group block bg-cream-pale rounded-2xl overflow-hidden shadow-card hover:shadow-card-lg transition-all duration-300 hover:-translate-y-1">
               <div class="h-44 overflow-hidden">
                 <img src={rel.image} alt={rel.title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy"/>
               </div>

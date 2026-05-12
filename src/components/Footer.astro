@@ -1,5 +1,6 @@
 ---
 import { services } from '../data/services';
+const base = import.meta.env.BASE_URL;
 ---
 
 <footer class="bg-navy-deep text-white/60 pt-14 pb-7">
@@ -9,7 +10,7 @@ import { services } from '../data/services';
       <!-- Brand -->
       <div>
         <img
-          src="/logo-grilli-abogados.svg"
+          src={`${import.meta.env.BASE_URL}logo-grilli-abogados.svg`}
           alt="Grilli Abogados"
           class="h-14 w-auto mb-4 opacity-90"
           onerror="this.style.display='none'"
@@ -24,7 +25,7 @@ import { services } from '../data/services';
         <ul class="space-y-2">
           {services.map(s => (
             <li>
-              <a href={`/servicios/${s.slug}`} class="text-sm text-white/55 hover:text-gold transition-colors duration-200">
+              <a href={`${base}servicios/${s.slug}`} class="text-sm text-white/55 hover:text-gold transition-colors duration-200">
                 {s.title}
               </a>
             </li>
