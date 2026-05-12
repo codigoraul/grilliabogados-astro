@@ -17,7 +17,7 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-navy border-b border-gold/20 transition-shadow duration-300">
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-navy-deep/85 backdrop-blur-md border-b border-gold/20 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-6">
     <div class="flex items-center justify-between h-[90px]">
 
@@ -145,10 +145,16 @@ const currentPath = Astro.url.pathname;
 </nav>
 
 <script>
-  // Scroll shadow
+  // Scroll effect
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
-    navbar?.classList.toggle('shadow-[0_4px_32px_rgba(0,0,0,0.45)]', window.scrollY > 40);
+    if (window.scrollY > 40) {
+      navbar?.classList.add('shadow-[0_4px_32px_rgba(0,0,0,0.45)]', 'bg-navy-deep/95');
+      navbar?.classList.remove('bg-navy-deep/85');
+    } else {
+      navbar?.classList.remove('shadow-[0_4px_32px_rgba(0,0,0,0.45)]', 'bg-navy-deep/95');
+      navbar?.classList.add('bg-navy-deep/85');
+    }
   });
 
   // Mobile menu
