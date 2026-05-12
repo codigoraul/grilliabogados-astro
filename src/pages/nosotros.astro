@@ -1,0 +1,210 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+---
+
+<Layout title="Quiénes Somos · Grilli Abogados" description="Conoce la historia, valores y equipo de Grilli Abogados — 25 años de trayectoria en Temuco, La Araucanía.">
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="relative bg-navy-deep pt-[90px] overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 80% 20%, #D1B787 0%, transparent 50%), radial-gradient(circle at 20% 80%, #464B69 0%, transparent 40%);"></div>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 py-20 relative">
+      <nav class="flex items-center gap-2 text-white/40 text-xs font-inter mb-8">
+        <a href="/" class="hover:text-gold transition-colors">Inicio</a>
+        <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        <span class="text-gold">Quiénes somos</span>
+      </nav>
+      <div class="max-w-3xl">
+        <span class="tag-pill mb-4 inline-block">Nuestra historia</span>
+        <h1 class="font-cinzel text-white text-4xl md:text-5xl font-semibold leading-tight mb-6">
+          Más de <span class="text-gold">25 años</span><br/>defendiendo sus derechos
+        </h1>
+        <p class="text-white/65 text-lg leading-relaxed">
+          Grilli Abogados es un estudio jurídico con arraigo en La Araucanía, que desde su fundación ha acompañado a personas y empresas en los momentos más cruciales de su vida legal.
+        </p>
+      </div>
+    </div>
+    <div class="h-12 relative">
+      <svg class="absolute bottom-0 w-full" viewBox="0 0 1440 48" preserveAspectRatio="none">
+        <path d="M0,48 C360,0 1080,0 1440,48 L1440,48 L0,48 Z" fill="#F7F3EE"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Historia y Misión -->
+  <section class="bg-cream-pale py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Imagen -->
+        <div class="relative">
+          <div class="relative rounded-2xl overflow-hidden shadow-card-lg">
+            <img
+              src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80"
+              alt="Grilli Abogados oficina"
+              class="w-full h-[440px] object-cover"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/40 to-transparent"></div>
+          </div>
+          <!-- Badge 25 años -->
+          <div class="absolute -bottom-6 -right-4 bg-white rounded-2xl shadow-card-lg p-5 flex flex-col items-center">
+            <span class="font-cinzel text-gold text-4xl font-bold leading-none">25</span>
+            <span class="text-navy-dark text-xs font-bold uppercase tracking-widest font-inter mt-1">años de</span>
+            <span class="text-navy-dark text-xs font-bold uppercase tracking-widest font-inter">experiencia</span>
+          </div>
+          <!-- Decoration -->
+          <div class="absolute -top-4 -left-4 w-16 h-16 border-2 border-gold/30 rounded-2xl -z-10"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="pt-8 lg:pt-0">
+          <div class="gold-divider mb-6"></div>
+          <h2 class="font-cinzel text-navy-deep text-3xl mb-6">Nuestra Historia</h2>
+          <div class="space-y-5 text-navy-dark/80 leading-relaxed">
+            <p>
+              Grilli Abogados nació en Temuco con una visión clara: ofrecer servicios jurídicos de alta calidad, accesibles y cercanos para las personas y empresas de La Araucanía.
+            </p>
+            <p>
+              A lo largo de más de dos décadas, hemos consolidado una trayectoria basada en la confianza, la ética profesional y los resultados concretos. Cada caso ha sido una oportunidad para aprender, crecer y perfeccionar nuestra práctica.
+            </p>
+            <p>
+              Hoy somos un equipo multidisciplinario que integra la defensa jurídica con la mediación y los servicios de selección de personal, ofreciendo una respuesta integral a las necesidades de nuestros clientes.
+            </p>
+          </div>
+          <blockquote class="mt-8 border-l-4 border-gold pl-5">
+            <p class="font-cinzel text-navy-dark text-lg italic leading-relaxed">"Experiencia. Estrategia. Resultados."</p>
+            <cite class="text-warm text-sm mt-2 block not-italic">— Grilli Abogados</cite>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Valores -->
+  <section class="bg-white py-16 border-t border-cream">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="tag-pill mb-3 inline-block">Nuestros Valores</span>
+        <h2 class="font-cinzel text-navy-deep text-3xl">Lo que nos define</h2>
+        <div class="gold-divider mx-auto mt-4 w-24"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          {
+            icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z',
+            title: 'Ética Profesional',
+            desc: 'Actuamos con honestidad e integridad en cada etapa del proceso legal, manteniendo la confianza de nuestros clientes.'
+          },
+          {
+            icon: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
+            title: 'Compromiso',
+            desc: 'Nos involucramos a fondo en cada caso, dedicando el tiempo y los recursos necesarios para obtener los mejores resultados.'
+          },
+          {
+            icon: 'M13 2L3 14h9l-1 8 10-12h-9l1-8z',
+            title: 'Estrategia',
+            desc: 'Cada caso merece una estrategia propia. Analizamos en detalle cada situación para definir el camino más eficiente.'
+          },
+          {
+            icon: 'M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 7a4 4 0 100 8 4 4 0 000-8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75',
+            title: 'Cercanía',
+            desc: 'Creemos en las relaciones personales. Escuchamos a cada cliente con atención y respondemos con claridad y empatía.'
+          },
+        ].map(v => (
+          <div class="bg-cream-pale rounded-2xl p-7 flex flex-col items-center text-center gap-4 shadow-card hover:shadow-card-lg transition-shadow duration-300">
+            <div class="w-14 h-14 rounded-full bg-gold/15 flex items-center justify-center">
+              <svg class="w-7 h-7 stroke-gold" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d={v.icon}/>
+              </svg>
+            </div>
+            <h3 class="font-cinzel text-navy-deep text-lg">{v.title}</h3>
+            <p class="text-warm text-sm leading-relaxed">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Áreas de práctica -->
+  <section class="bg-navy-deep py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="inline-block text-xs font-bold uppercase tracking-widest text-gold font-inter mb-3 px-3 py-1 rounded-full bg-gold/10">Áreas de Práctica</span>
+        <h2 class="font-cinzel text-white text-3xl">Campos en los que destacamos</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {[
+          { label: 'Defensa Judicial', href: '/servicios/defensa-judicial', icon: 'M14 4l6 6-8.5 8.5-6-6L14 4zM4 20l6-6' },
+          { label: 'Derecho de Familia', href: '/servicios/familia', icon: 'M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2zM9 22V12h6v10' },
+          { label: 'Derecho Laboral', href: '/servicios/laboral', icon: 'M2 7h20v14a2 2 0 01-2 2H4a2 2 0 01-2-2V7zM16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2' },
+          { label: 'Negligencia Médica', href: '/servicios/negligencia-medica', icon: 'M22 12h-4l-3 9L9 3l-3 9H2' },
+          { label: 'Mediación', href: '/servicios/mediacion', icon: 'M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 7a4 4 0 100 8 4 4 0 000-8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75' },
+          { label: 'Selección Personal', href: '/servicios/seleccion-personal', icon: 'M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 7a4 4 0 100 8 4 4 0 000-8zM16 11l2 2 4-4' },
+        ].map(a => (
+          <a href={a.href} class="group flex flex-col items-center gap-3 bg-white/5 hover:bg-gold/10 border border-white/10 hover:border-gold/30 rounded-xl p-5 text-center transition-all duration-300">
+            <svg class="w-7 h-7 stroke-gold/70 group-hover:stroke-gold transition-colors" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d={a.icon}/>
+            </svg>
+            <span class="text-white/65 group-hover:text-white text-xs font-inter font-medium leading-tight transition-colors">{a.label}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline trayectoria -->
+  <section class="bg-cream-pale py-16 border-t border-cream">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="tag-pill mb-3 inline-block">Trayectoria</span>
+        <h2 class="font-cinzel text-navy-deep text-3xl">Nuestra evolución</h2>
+        <div class="gold-divider mx-auto mt-4 w-24"></div>
+      </div>
+      <div class="relative">
+        <!-- Line -->
+        <div class="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-gold/25 -translate-x-0.5"></div>
+        <div class="space-y-10">
+          {[
+            { year: '2000', title: 'Fundación del estudio', desc: 'Grilli Abogados abre sus puertas en Temuco con foco en derecho civil y de familia.' },
+            { year: '2008', title: 'Expansión al área laboral', desc: 'Incorporamos el Derecho Laboral como área especializada, ampliando nuestra cobertura para trabajadores y empresas.' },
+            { year: '2013', title: 'Unidad de Mediación', desc: 'Creamos el área de mediación familiar y civil como alternativa eficiente al proceso judicial.' },
+            { year: '2018', title: 'Negligencia Médica', desc: 'Desarrollamos una especialidad de alto impacto en responsabilidad civil médica, atendiendo casos complejos.' },
+            { year: '2022', title: 'Selección de Personal', desc: 'Incorporamos servicios psicosociales y de selección de personal para empresas de la región.' },
+            { year: 'Hoy', title: '25 años · Temuco', desc: 'Un estudio consolidado, multidisciplinario, comprometido con la excelencia jurídica en La Araucanía.' },
+          ].map((t, i) => (
+            <div class={`relative flex items-start gap-6 ${i % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'} flex-row`}>
+              <!-- Dot -->
+              <div class="absolute left-4 sm:left-1/2 -translate-x-2.5 w-5 h-5 rounded-full bg-gold border-2 border-white shadow-gold flex-shrink-0 z-10 mt-1"></div>
+              <!-- Content -->
+              <div class={`pl-12 sm:pl-0 sm:w-[calc(50%-2rem)] ${i % 2 === 0 ? 'sm:pr-10 sm:text-right' : 'sm:pl-10'}`}>
+                <span class="inline-block font-cinzel text-gold text-sm font-bold mb-1">{t.year}</span>
+                <h3 class="font-cinzel text-navy-deep text-lg mb-1">{t.title}</h3>
+                <p class="text-warm text-sm leading-relaxed">{t.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-white py-16 border-t border-cream">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="font-cinzel text-navy-deep text-3xl mb-4">¿Listo para trabajar juntos?</h2>
+      <p class="text-warm text-lg mb-8">Cuéntenos su caso. Le atenderemos con discreción, rapidez y la experiencia de más de 25 años.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="/contacto" class="btn-gold px-8 py-4 text-sm">Agendar consulta</a>
+        <a href="/servicios" class="btn-outline-gold px-8 py-4 text-sm">Ver servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppFloat />
+</Layout>

@@ -1,0 +1,80 @@
+---
+interface Props {
+  formId: string;
+  title: string;
+  subtitle?: string;
+  btnLabel: string;
+  accentColor?: string;
+  showAreaSelect?: boolean;
+}
+const { formId, title, subtitle = 'Sin costo inicial · Respuesta rápida', btnLabel, accentColor = '#D1B787', showAreaSelect = false } = Astro.props;
+---
+
+<div class="bg-white rounded-2xl shadow-card-lg p-9" style={`border-top: 4px solid ${accentColor}`}>
+  <h3 class="font-cinzel text-navy-deep text-xl mb-1">{title}</h3>
+  <p class="text-warm text-sm mb-6">{subtitle}</p>
+
+  <form id={formId} class="space-y-4" onsubmit="handleForm(event)">
+    <div>
+      <label class="form-label">Nombre</label>
+      <input type="text" class="form-input" placeholder="Su nombre completo" required />
+    </div>
+    <div>
+      <label class="form-label">Teléfono</label>
+      <input type="tel" class="form-input" placeholder="+56 9 XXXX XXXX" required />
+    </div>
+    <div>
+      <label class="form-label">Correo electrónico</label>
+      <input type="email" class="form-input" placeholder="su@correo.cl" required />
+    </div>
+    <div>
+      <label class="form-label">Comuna</label>
+      <input type="text" class="form-input" placeholder="Su comuna" />
+    </div>
+    {showAreaSelect && (
+      <div>
+        <label class="form-label">Área de interés</label>
+        <select class="form-input">
+          <option value="">Seleccione un área...</option>
+          <option>Defensa Judicial</option>
+          <option>Derecho de Familia</option>
+          <option>Derecho Laboral</option>
+          <option>Negligencia Médica</option>
+          <option>Mediación</option>
+          <option>Selección de Personal</option>
+        </select>
+      </div>
+    )}
+    <div>
+      <label class="form-label">Describa su situación</label>
+      <textarea class="form-input min-h-[90px] resize-y" placeholder="Descripción breve de su caso..."></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="w-full py-3.5 rounded-lg font-inter font-bold text-sm tracking-widest uppercase transition-all duration-300 hover:-translate-y-0.5"
+      style={`background:${accentColor}; color:#2E3249;`}
+    >
+      {btnLabel}
+    </button>
+
+    <div id={`${formId}-success`} class="hidden bg-green-50 border border-green-300 text-green-800 rounded-lg px-4 py-3 text-sm">
+      ✓ Su consulta fue enviada. Le contactaremos a la brevedad.
+    </div>
+  </form>
+</div>
+
+<script>
+  function handleForm(e: Event) {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const successId = form.id + '-success';
+    const msg = document.getElementById(successId);
+    if (msg) {
+      msg.classList.remove('hidden');
+      form.reset();
+      setTimeout(() => msg.classList.add('hidden'), 6000);
+    }
+  }
+  (window as any).handleForm = handleForm;
+</script>
