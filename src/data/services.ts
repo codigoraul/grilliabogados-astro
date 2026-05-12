@@ -17,7 +17,7 @@ export interface Service {
 export const services: Service[] = [
   {
     slug: 'defensa-judicial',
-    title: 'Defensa Judicial',
+    title: 'Representación Judicial',
     tag: 'Área Jurídica',
     shortDesc: 'Representamos a personas y empresas en juicios civiles, familiares, laborales y patrimoniales con estrategias de defensa sólidas y eficaces.',
     longDesc: 'Representamos a personas y empresas en juicios civiles, familiares, laborales y patrimoniales, desarrollando estrategias de defensa sólidas y eficaces. Entendemos que detrás de cada juicio o demanda existe una persona que necesita respuestas claras, defensa sólida y resultados concretos.',
@@ -25,7 +25,7 @@ export const services: Service[] = [
     items: [
       'Demandas civiles',
       'Contestación de demandas',
-      'Defensa judicial',
+      'Representación judicial',
       'Comparecencias',
       'Juicios Policía Local',
       'Indemnizaciones',
