@@ -6,8 +6,9 @@ interface Props {
   btnLabel: string;
   accentColor?: string;
   showAreaSelect?: boolean;
+  showCvUpload?: boolean;
 }
-const { formId, title, subtitle = 'Sin costo inicial · Respuesta rápida', btnLabel, accentColor = '#D1B787', showAreaSelect = false } = Astro.props;
+const { formId, title, subtitle = 'Sin costo inicial · Respuesta rápida', btnLabel, accentColor = '#D1B787', showAreaSelect = false, showCvUpload = false } = Astro.props;
 ---
 
 <div class="bg-white rounded-2xl shadow-card-lg p-9" style={`border-top: 4px solid ${accentColor}`}>
@@ -43,6 +44,17 @@ const { formId, title, subtitle = 'Sin costo inicial · Respuesta rápida', btnL
           <option>Mediación</option>
           <option>Selección de Personal</option>
         </select>
+      </div>
+    )}
+    {showCvUpload && (
+      <div>
+        <label class="form-label">Adjuntar CV (opcional)</label>
+        <input 
+          type="file" 
+          accept=".pdf,.doc,.docx" 
+          class="form-input file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-gold/10 file:text-navy-deep hover:file:bg-gold/20 file:cursor-pointer"
+        />
+        <p class="text-xs text-warm mt-1">Formatos: PDF, DOC, DOCX (máx. 5MB)</p>
       </div>
     )}
     <div>
