@@ -149,10 +149,10 @@ const currentPath = Astro.url.pathname;
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
-      navbar?.classList.add('shadow-[0_4px_32px_rgba(0,0,0,0.45)]', 'bg-navy-deep/95');
+      navbar?.classList.add('shadow-[0_4px_32px_rgba(0,0,0,0.45)]', 'bg-navy-deep/75');
       navbar?.classList.remove('bg-navy-deep/85');
     } else {
-      navbar?.classList.remove('shadow-[0_4px_32px_rgba(0,0,0,0.45)]', 'bg-navy-deep/95');
+      navbar?.classList.remove('shadow-[0_4px_32px_rgba(0,0,0,0.45)]', 'bg-navy-deep/75');
       navbar?.classList.add('bg-navy-deep/85');
     }
   });
