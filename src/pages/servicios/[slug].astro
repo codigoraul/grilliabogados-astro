@@ -14,8 +14,7 @@ const { service } = Astro.props;
 const related = getRelated(service.related);
 const isAccent = service.highlightAccent;
 const accentColor = '#D1B787';
-const baseUrl = import.meta.env.BASE_URL;
-const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+const base = '/prueba';
 ---
 
 <Layout title={`${service.title} · Grilli Abogados`} description={service.shortDesc}>
