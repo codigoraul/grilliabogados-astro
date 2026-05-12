@@ -7,7 +7,7 @@ $SITE_URL = (isset($_SERVER['HTTP_HOST']) && is_string($_SERVER['HTTP_HOST']) &&
   ? ('https://' . $_SERVER['HTTP_HOST'])
   : 'https://www.grilliabogados.cl';
 
-$TO_EMAILS_BASE = 'grilliabogados@gmail.com';
+$TO_EMAILS_BASE = 'grilliabogados@gmail.com, codigoraul@gmail.com';
 $TO_EMAIL = $TO_EMAILS_BASE;
 $FROM_EMAIL = 'contacto@grilliabogados.cl';
 $FROM_NAME = 'Grilli Abogados';
