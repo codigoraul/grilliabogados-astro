@@ -1,5 +1,6 @@
 ---
-const base = import.meta.env.BASE_URL;
+const baseUrl = import.meta.env.BASE_URL;
+const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 const navLinks = [
   { href: base, label: 'Inicio' },
   { href: `${base}nosotros`, label: 'Quiénes somos' },
@@ -23,7 +24,7 @@ const currentPath = Astro.url.pathname;
 
       <!-- Logo -->
       <a href={base} class="flex items-center opacity-100 hover:opacity-90 transition-opacity">
-        <img src="/logo-grilli-abogados.svg" alt="Grilli Abogados" height="54" class="h-[54px] w-auto">
+        <img src="./logo-grilli-abogados.svg" alt="Grilli Abogados" height="54" class="h-[54px] w-auto">
       </a>
 
       <!-- Desktop links -->
