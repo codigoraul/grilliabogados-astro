@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * Configuración del formulario de contacto
+ * 
+ * Renombra este archivo a contacto-config.php y configura los valores según tu entorno.
+ */
+
+return [
+  // Ruta base del sitio (ej: '/prueba' o '')
+  'BASE_PATH' => '/prueba',
+  
+  // URL completa del sitio
+  'SITE_URL' => 'https://www.grilliabogados.cl',
+  
+  // Email(s) de destino (separados por coma)
+  'TO_EMAIL' => 'grilliabogados@gmail.com',
+  
+  // Email remitente
+  'FROM_EMAIL' => 'contacto@grilliabogados.cl',
+  
+  // Nombre del remitente
+  'FROM_NAME' => 'Grilli Abogados',
+  
+  // Emails en copia oculta (opcional, separados por coma)
+  'BCC_EMAILS' => '',
+];

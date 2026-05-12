@@ -15,29 +15,32 @@ const { formId, title, subtitle = 'Sin costo inicial · Respuesta rápida', btnL
   <h3 class="font-cinzel text-navy-deep text-xl mb-1">{title}</h3>
   <p class="text-warm text-sm mb-6">{subtitle}</p>
 
-  <form id={formId} class="space-y-4" onsubmit="handleForm(event)">
+  <form id={formId} class="space-y-4" onsubmit="handleForm(event)" method="POST" action="/prueba/contacto.php" enctype="multipart/form-data">
+    <!-- Honeypot anti-spam -->
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+    
     <div>
       <label class="form-label">Nombre</label>
-      <input type="text" class="form-input" placeholder="Su nombre completo" required />
+      <input type="text" name="nombre" class="form-input" placeholder="Su nombre completo" required />
     </div>
     <div>
       <label class="form-label">Teléfono</label>
-      <input type="tel" class="form-input" placeholder="+56 9 XXXX XXXX" required />
+      <input type="tel" name="telefono" class="form-input" placeholder="+56 9 XXXX XXXX" required />
     </div>
     <div>
       <label class="form-label">Correo electrónico</label>
-      <input type="email" class="form-input" placeholder="su@correo.cl" required />
+      <input type="email" name="email" class="form-input" placeholder="su@correo.cl" required />
     </div>
     <div>
       <label class="form-label">Comuna</label>
-      <input type="text" class="form-input" placeholder="Su comuna" />
+      <input type="text" name="comuna" class="form-input" placeholder="Su comuna" />
     </div>
     {showAreaSelect && (
       <div>
         <label class="form-label">Área de interés</label>
-        <select class="form-input">
+        <select name="area" class="form-input">
           <option value="">Seleccione un área...</option>
-          <option>Defensa Judicial</option>
+          <option>Representación Judicial</option>
           <option>Derecho de Familia</option>
           <option>Derecho Laboral</option>
           <option>Negligencia Médica</option>
@@ -50,7 +53,8 @@ const { formId, title, subtitle = 'Sin costo inicial · Respuesta rápida', btnL
       <div>
         <label class="form-label">Adjuntar CV (opcional)</label>
         <input 
-          type="file" 
+          type="file"
+          name="cv"
           accept=".pdf,.doc,.docx" 
           class="form-input file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-gold/10 file:text-navy-deep hover:file:bg-gold/20 file:cursor-pointer"
         />
@@ -59,7 +63,7 @@ const { formId, title, subtitle = 'Sin costo inicial · Respuesta rápida', btnL
     )}
     <div>
       <label class="form-label">Describa su situación</label>
-      <textarea class="form-input min-h-[90px] resize-y" placeholder="Descripción breve de su caso..."></textarea>
+      <textarea name="mensaje" class="form-input min-h-[90px] resize-y" placeholder="Descripción breve de su caso..." required></textarea>
     </div>
 
     <button
@@ -73,20 +77,70 @@ const { formId, title, subtitle = 'Sin costo inicial · Respuesta rápida', btnL
     <div id={`${formId}-success`} class="hidden bg-green-50 border border-green-300 text-green-800 rounded-lg px-4 py-3 text-sm">
       ✓ Su consulta fue enviada. Le contactaremos a la brevedad.
     </div>
+    <div id={`${formId}-error`} class="hidden bg-red-50 border border-red-300 text-red-800 rounded-lg px-4 py-3 text-sm">
+      ✗ <span id={`${formId}-error-msg`}></span>
+    </div>
   </form>
 </div>
 
 <script>
-  function handleForm(e: Event) {
+  async function handleForm(e: Event) {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
-    const successId = form.id + '-success';
-    const msg = document.getElementById(successId);
-    if (msg) {
-      msg.classList.remove('hidden');
-      form.reset();
-      setTimeout(() => msg.classList.add('hidden'), 6000);
+    const formId = form.id;
+    const successEl = document.getElementById(`${formId}-success`);
+    const errorEl = document.getElementById(`${formId}-error`);
+    const errorMsgEl = document.getElementById(`${formId}-error-msg`);
+    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    
+    // Ocultar mensajes previos
+    successEl?.classList.add('hidden');
+    errorEl?.classList.add('hidden');
+    
+    // Deshabilitar botón
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'ENVIANDO...';
+    }
+    
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        successEl?.classList.remove('hidden');
+        form.reset();
+        setTimeout(() => successEl?.classList.add('hidden'), 8000);
+      } else {
+        if (errorMsgEl) errorMsgEl.textContent = result.message || 'Error al enviar el formulario.';
+        errorEl?.classList.remove('hidden');
+        setTimeout(() => errorEl?.classList.add('hidden'), 8000);
+      }
+    } catch (error) {
+      if (errorMsgEl) errorMsgEl.textContent = 'Error de conexión. Por favor intenta nuevamente.';
+      errorEl?.classList.remove('hidden');
+      setTimeout(() => errorEl?.classList.add('hidden'), 8000);
+    } finally {
+      // Rehabilitar botón
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = submitBtn.getAttribute('data-original-text') || 'ENVIAR';
+      }
     }
   }
+  
+  // Guardar texto original del botón
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('form[id^="form-"]').forEach(form => {
+      const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      if (btn) btn.setAttribute('data-original-text', btn.textContent || 'ENVIAR');
+    });
+  });
+  
   (window as any).handleForm = handleForm;
 </script>
