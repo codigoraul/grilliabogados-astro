@@ -1,17 +1,17 @@
 ---
-const base = '/prueba';
+const base = '/prueba/';
 const navLinks = [
-  { href: `${base}/`, label: 'Inicio' },
-  { href: `${base}/nosotros`, label: 'Quiénes somos' },
-  { href: `${base}/servicios`, label: 'Servicios', dropdown: [
-    { href: `${base}/servicios/defensa-judicial`,   label: 'Defensa Judicial' },
-    { href: `${base}/servicios/familia`,            label: 'Derecho de Familia' },
-    { href: `${base}/servicios/laboral`,            label: 'Derecho Laboral' },
-    { href: `${base}/servicios/negligencia-medica`, label: 'Negligencia Médica' },
-    { href: `${base}/servicios/mediacion`,          label: 'Mediación' },
-    { href: `${base}/servicios/seleccion-personal`, label: 'Selección de Personal' },
+  { href: base, label: 'Inicio' },
+  { href: `${base}nosotros`, label: 'Quiénes somos' },
+  { href: `${base}servicios`, label: 'Servicios', dropdown: [
+    { href: `${base}servicios/defensa-judicial`,   label: 'Defensa Judicial' },
+    { href: `${base}servicios/familia`,            label: 'Derecho de Familia' },
+    { href: `${base}servicios/laboral`,            label: 'Derecho Laboral' },
+    { href: `${base}servicios/negligencia-medica`, label: 'Negligencia Médica' },
+    { href: `${base}servicios/mediacion`,          label: 'Mediación' },
+    { href: `${base}servicios/seleccion-personal`, label: 'Selección de Personal' },
   ]},
-  { href: `${base}/contacto`, label: 'Contacto' },
+  { href: `${base}contacto`, label: 'Contacto' },
 ];
 
 const currentPath = Astro.url.pathname;
