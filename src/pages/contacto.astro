@@ -107,20 +107,6 @@ const base = '/prueba/';
               ))}
             </div>
           </div>
-
-          <!-- Map embed -->
-          <div class="rounded-2xl overflow-hidden shadow-card-lg border border-cream">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3070.6!2d-72.5963!3d-38.7358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96145cfa79e53701%3A0x0!2sAntonio%20Varas%20989%2C%20Temuco!5e0!3m2!1ses!2scl!4v1699999999999"
-              width="100%"
-              height="220"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Grilli Abogados - Ubicación"
-            ></iframe>
-          </div>
         </div>
 
         <!-- Right: Form -->
@@ -133,33 +119,21 @@ const base = '/prueba/';
             accentColor="#D1B787"
             showAreaSelect={true}
           />
-
-          <!-- FAQ rápido -->
-          <div class="mt-8 bg-white rounded-2xl shadow-card p-7">
-            <h3 class="font-cinzel text-navy-deep text-lg mb-5">Preguntas frecuentes</h3>
-            <div class="space-y-4" id="faq">
-              {[
-                { q: '¿La primera consulta tiene costo?', a: 'No. La evaluación inicial de su caso es completamente gratuita y sin compromisos.' },
-                { q: '¿Atienden fuera de Temuco?', a: 'Sí, atendemos clientes en toda la Región de La Araucanía. También podemos coordinar consultas por videollamada.' },
-                { q: '¿Cuánto demora una respuesta?', a: 'Respondemos todas las consultas dentro de las 24 horas hábiles. Por WhatsApp la respuesta es inmediata.' },
-                { q: '¿Trabajan en casos de negligencia médica?', a: 'Sí, es una de nuestras áreas de mayor especialización, con casos en el sistema público y privado.' },
-              ].map((f, i) => (
-                <div class="border-b border-cream last:border-0 pb-4 last:pb-0">
-                  <button
-                    class="w-full flex items-start justify-between gap-4 text-left group"
-                    onclick={`toggleFaq(${i})`}
-                  >
-                    <span class="font-semibold text-navy-dark text-sm">{f.q}</span>
-                    <svg id={`faq-icon-${i}`} class="w-4 h-4 stroke-gold shrink-0 mt-0.5 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke-width="2.5">
-                      <polyline points="6 9 12 15 18 9"/>
-                    </svg>
-                  </button>
-                  <div id={`faq-ans-${i}`} class="hidden mt-2 text-warm text-sm leading-relaxed">{f.a}</div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
+      </div>
+
+      <!-- Map embed - Full width below -->
+      <div class="mt-12 rounded-2xl overflow-hidden shadow-card-lg border border-cream">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.0089905824725!2d-72.59191711682719!3d-38.7405559126037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9614d32fda6a0c3d%3A0x80ff2234d05abc2f!2sGrilli%20Abogados!5e0!3m2!1ses!2scl!4v1778607450971!5m2!1ses!2scl"
+          width="100%"
+          height="400"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Grilli Abogados - Ubicación"
+        ></iframe>
       </div>
     </div>
   </section>
@@ -167,16 +141,3 @@ const base = '/prueba/';
   <Footer />
   <WhatsAppFloat />
 </Layout>
-
-<script>
-  function toggleFaq(i: number) {
-    const ans = document.getElementById(`faq-ans-${i}`);
-    const icon = document.getElementById(`faq-icon-${i}`);
-    if (ans && icon) {
-      const open = !ans.classList.contains('hidden');
-      ans.classList.toggle('hidden', open);
-      icon.style.transform = open ? '' : 'rotate(180deg)';
-    }
-  }
-  (window as any).toggleFaq = toggleFaq;
-</script>
