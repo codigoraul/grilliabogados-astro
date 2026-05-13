@@ -7,8 +7,9 @@ interface Props {
   accentColor?: string;
   showAreaSelect?: boolean;
   showCvUpload?: boolean;
+  serviceName?: string;
 }
-const { formId, title, subtitle = 'Sin costo inicial · Respuesta rápida', btnLabel, accentColor = '#D1B787', showAreaSelect = false, showCvUpload = false } = Astro.props;
+const { formId, title, subtitle = 'Sin costo inicial · Respuesta rápida', btnLabel, accentColor = '#D1B787', showAreaSelect = false, showCvUpload = false, serviceName = '' } = Astro.props;
 ---
 
 <div class="bg-white rounded-2xl shadow-card-lg p-9" style={`border-top: 4px solid ${accentColor}`}>
@@ -18,6 +19,9 @@ const { formId, title, subtitle = 'Sin costo inicial · Respuesta rápida', btnL
   <form id={formId} class="space-y-4" onsubmit="handleForm(event)" method="POST" action="/prueba/contacto.php" enctype="multipart/form-data">
     <!-- Honeypot anti-spam -->
     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+    
+    <!-- Service name hidden field -->
+    {serviceName && <input type="hidden" name="area" value={serviceName} />}
     
     <div>
       <label class="form-label">Nombre</label>
