@@ -142,6 +142,13 @@ if ($area !== '') {
   $subject = 'Consulta: ' . $area;
 }
 
+// Si es Selección de Personal y tiene CV, especificarlo en el asunto
+if ($cvFilename !== '' && (stripos($area, 'Selección') !== false || stripos($area, 'Personal') !== false)) {
+  $subject = 'Selección de Personal - Postulación con CV adjunto';
+} elseif ($cvFilename !== '') {
+  $subject = 'Consulta con CV adjunto: ' . ($area !== '' ? $area : 'General');
+}
+
 $escape = static function (string $value): string {
   return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 };
