@@ -41,7 +41,7 @@
     @apply w-full px-4 py-3 bg-ivory border-2 border-sand rounded-lg font-inter text-sm text-navy-deep outline-none transition-all duration-200 focus:border-gold focus:bg-white;
   }
   .form-label {
-    @apply block text-xs font-bold uppercase tracking-wider text-warm mb-1.5;
+    @apply block text-xs font-semibold uppercase tracking-wider text-navy-dark mb-1.5;
   }
   .card-service {
     @apply bg-white rounded-xl overflow-hidden shadow-card border-t-4 border-gold transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-lg flex flex-col;

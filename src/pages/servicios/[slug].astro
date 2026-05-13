@@ -60,10 +60,10 @@ const base = '/prueba/';
   <!-- Main content -->
   <section class="bg-cream-pale py-16">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div class={`grid grid-cols-1 gap-12 ${service.slug === 'seleccion-personal' ? 'lg:grid-cols-2' : 'lg:grid-cols-3'}`}>
 
         <!-- Left: Content -->
-        <div class="lg:col-span-2 space-y-10">
+        <div class={service.slug === 'seleccion-personal' ? '' : 'lg:col-span-2'} class="space-y-10">
 
           <!-- Descripción -->
           <div>

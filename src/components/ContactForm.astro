@@ -12,7 +12,7 @@ interface Props {
 const { formId, title, subtitle = 'Sin costo inicial · Respuesta rápida', btnLabel, accentColor = '#D1B787', showAreaSelect = false, showCvUpload = false, serviceName = '' } = Astro.props;
 ---
 
-<div class="bg-white rounded-2xl shadow-card-lg p-9" style={`border-top: 4px solid ${accentColor}`}>
+<div class={`bg-white rounded-2xl shadow-card-lg ${showCvUpload ? 'px-14 py-9' : 'p-9'}`} style={`border-top: 4px solid ${accentColor}`}>
   <h3 class="font-cinzel text-navy-deep text-xl mb-1">{title}</h3>
   <p class="text-warm text-sm mb-6">{subtitle}</p>
 
