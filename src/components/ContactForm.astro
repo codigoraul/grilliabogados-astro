@@ -35,10 +35,12 @@ const { formId, title, subtitle = 'Sin costo inicial · Respuesta rápida', btnL
       <label class="form-label">Correo electrónico</label>
       <input type="email" name="email" class="form-input" placeholder="su@correo.cl" required />
     </div>
-    <div>
-      <label class="form-label">Comuna</label>
-      <input type="text" name="comuna" class="form-input" placeholder="Su comuna" />
-    </div>
+    {!showCvUpload && (
+      <div>
+        <label class="form-label">Comuna</label>
+        <input type="text" name="comuna" class="form-input" placeholder="Su comuna" />
+      </div>
+    )}
     {showAreaSelect && (
       <div>
         <label class="form-label">Área de interés</label>
@@ -66,8 +68,8 @@ const { formId, title, subtitle = 'Sin costo inicial · Respuesta rápida', btnL
       </div>
     )}
     <div>
-      <label class="form-label">Describa su situación</label>
-      <textarea name="mensaje" class="form-input min-h-[90px] resize-y" placeholder="Descripción breve de su caso..." required></textarea>
+      <label class="form-label">{showCvUpload ? 'Mensaje (opcional)' : 'Describa su situación'}</label>
+      <textarea name="mensaje" class="form-input min-h-[90px] resize-y" placeholder={showCvUpload ? 'Cuéntenos sobre su experiencia y motivación...' : 'Descripción breve de su caso...'} required={!showCvUpload}></textarea>
     </div>
 
     <button
