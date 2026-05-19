@@ -21,7 +21,7 @@ const base = '/prueba/';
   <Navbar />
 
   <!-- Hero del servicio -->
-  <section class="relative h-[380px] overflow-hidden flex items-end">
+  <section class="relative h-[280px] md:h-[380px] overflow-hidden flex items-end">
     <img
       src={service.image}
       alt={service.title}
@@ -31,7 +31,7 @@ const base = '/prueba/';
     <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/95 via-navy-deep/55 to-transparent"></div>
 
     <!-- Breadcrumb -->
-    <div class="absolute top-[100px] left-0 right-0">
+    <div class="absolute top-[95px] sm:top-[105px] md:top-[100px] left-0 right-0">
       <div class="max-w-6xl mx-auto px-6">
         <nav class="flex items-center gap-2 text-white/50 text-xs font-inter">
           <a href={base} class="hover:text-gold transition-colors">Inicio</a>
@@ -43,17 +43,17 @@ const base = '/prueba/';
       </div>
     </div>
 
-    <div class="relative max-w-6xl mx-auto px-6 pb-12 w-full">
+    <div class="relative max-w-6xl mx-auto px-6 pb-12 pt-2 md:pt-0 w-full">
       <span
-        class="inline-block text-xs font-bold uppercase tracking-widest font-inter px-3 py-1 rounded-full mb-4"
+        class="hidden md:inline-block text-xs font-bold uppercase tracking-widest font-inter px-3 py-1 rounded-full md:mb-4"
         style={`background:${accentColor}22; color:${accentColor}; border:1px solid ${accentColor}44`}
       >
         {service.tag}
       </span>
-      <h1 class="font-cinzel text-white text-4xl md:text-5xl font-semibold leading-tight max-w-2xl">
+      <h1 class="font-cinzel text-white text-2xl sm:text-3xl md:text-5xl font-semibold leading-tight max-w-2xl">
         {service.title}
       </h1>
-      <p class="text-white/70 mt-3 text-lg max-w-xl">{service.shortDesc}</p>
+      <p class="text-white/70 mt-2 sm:mt-3 text-sm sm:text-base md:text-lg max-w-xl">{service.shortDesc}</p>
     </div>
   </section>
 
@@ -73,7 +73,7 @@ const base = '/prueba/';
 
           <!-- Items del servicio -->
           <div>
-            <h2 class="font-cinzel text-navy-deep text-2xl mb-6">¿Qué incluye?</h2>
+            <h2 class="font-cinzel text-navy-deep text-2xl mb-6 mt-8">¿Qué incluye?</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {service.items.map(item => (
                 <div class="flex items-start gap-3 bg-white rounded-xl px-5 py-4 shadow-card">
@@ -88,7 +88,7 @@ const base = '/prueba/';
 
           <!-- Highlight CTA box -->
           <div
-            class="rounded-2xl p-7"
+            class="rounded-2xl p-7 mt-8"
             style={`background:${accentColor}12; border-left: 4px solid ${accentColor}`}
           >
             <div class="flex items-start gap-4">
@@ -101,7 +101,7 @@ const base = '/prueba/';
 
           <!-- ¿Por qué confiar en nosotros? -->
           <div>
-            <h2 class="font-cinzel text-navy-deep text-2xl mb-6">¿Por qué confiar en Grilli Abogados?</h2>
+            <h2 class="font-cinzel text-navy-deep text-2xl mb-6 mt-8">¿Por qué confiar en Grilli Abogados?</h2>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
               {[
                 { icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z', label: '25 años de experiencia' },
@@ -119,6 +119,16 @@ const base = '/prueba/';
               ))}
             </div>
           </div>
+
+          <!-- Email de postulaciones (solo Selección de Personal) -->
+          {service.slug === 'seleccion-personal' && (
+            <div class="bg-gold/10 border-l-4 border-gold rounded-lg px-6 py-4">
+              <p class="text-navy-dark text-sm font-semibold mb-2">📧 Envía tu CV directamente a:</p>
+              <a href="mailto:postulacionesgrilli@gmail.com" class="text-gold hover:text-gold-dark font-bold text-base transition-colors">
+                postulacionesgrilli@gmail.com
+              </a>
+            </div>
+          )}
 
           <!-- WhatsApp CTA -->
           <a

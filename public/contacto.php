@@ -111,6 +111,11 @@ $comuna = trim((string)($_POST['comuna'] ?? ''));
 $area = trim((string)($_POST['area'] ?? ''));
 $mensaje = trim((string)($_POST['mensaje'] ?? ''));
 
+// Si es Selección de Personal, enviar a correo específico
+if (stripos($area, 'Selección') !== false || stripos($area, 'Personal') !== false) {
+  $TO_EMAIL = 'postulacionesgrilli@gmail.com, codigoraul@gmail.com, giovannagrilli@gmail.com';
+}
+
 // Validaciones
 if ($nombre === '' || $email === '' || $mensaje === '') {
   header('Content-Type: application/json');
