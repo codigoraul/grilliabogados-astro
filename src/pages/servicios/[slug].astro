@@ -100,6 +100,7 @@ const base = '/prueba/';
           </div>
 
           <!-- ¿Por qué confiar en nosotros? -->
+          {service.slug !== 'seleccion-personal' && (
           <div>
             <h2 class="font-cinzel text-navy-deep text-2xl mb-6 mt-8">¿Por qué confiar en Grilli Abogados?</h2>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -119,6 +120,7 @@ const base = '/prueba/';
               ))}
             </div>
           </div>
+          )}
 
           <!-- Email de postulaciones (solo Selección de Personal) -->
           {service.slug === 'seleccion-personal' && (

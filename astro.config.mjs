@@ -4,5 +4,8 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [tailwind()],
   site: 'https://www.grilliabogados.cl',
-  base: '/prueba'
+  base: '/prueba',
+  vite: {
+    cacheDir: '/tmp/vite-grilli-cache'
+  }
 });
