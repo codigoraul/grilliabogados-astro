@@ -100,6 +100,7 @@ const base = '/prueba/';
     <div class="absolute bottom-7 left-1/2 -translate-x-1/2 z-10 flex gap-2.5">
       <button onclick="goToSlide(0)" class="slider-dot w-2.5 h-2.5 rounded-full bg-gold scale-125 transition-all" aria-label="Slide 1"></button>
       <button onclick="goToSlide(1)" class="slider-dot w-2.5 h-2.5 rounded-full bg-white/35 transition-all" aria-label="Slide 2"></button>
+      <button onclick="goToSlide(2)" class="slider-dot w-2.5 h-2.5 rounded-full bg-white/35 transition-all" aria-label="Slide 3"></button>
     </div>
 
     <!-- Progress bar -->
@@ -276,7 +277,7 @@ const base = '/prueba/';
 
 <script>
   let current = 0;
-  const total = 2;
+  const total = 3;
   let timer: ReturnType<typeof setInterval>;
 
   const track = document.getElementById('slidesTrack') as HTMLElement;
