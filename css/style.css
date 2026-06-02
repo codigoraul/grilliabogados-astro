@@ -384,6 +384,7 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,0.58); padding: 5
 .team-card:hover { transform: translateY(-4px); }
 .team-card-photo { height: 200px; background: var(--navy-pale); display: flex; align-items: center; justify-content: center; }
 .team-card-photo svg { width: 64px; height: 64px; stroke: var(--navy-mid); fill: none; stroke-width: 1.2; }
+.avatar-initials { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700; color: var(--gold); letter-spacing: 0.05em; }
 .team-card-body { padding: 20px; border-top: 3px solid var(--gold); }
 .team-card-body h4 { color: var(--navy-deep); margin-bottom: 3px; font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; }
 .team-card-body .role { color: var(--gold-dark); font-size: 0.80rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }

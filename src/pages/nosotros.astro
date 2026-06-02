@@ -131,6 +131,38 @@ const base = '/prueba/';
     </div>
   </section>
 
+  <!-- Equipo -->
+  <section id="equipo" class="bg-cream-pale py-16 border-t border-cream">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="tag-pill mb-3 inline-block">El Equipo</span>
+        <h2 class="font-cinzel text-navy-deep text-3xl">Profesionales comprometidos</h2>
+        <div class="gold-divider mx-auto mt-4 w-24"></div>
+        <p class="text-warm mt-4 max-w-xl mx-auto">Nuestro equipo combina experiencia jurídica con visión humana para ofrecer una defensa integral.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { initials: 'GG', name: 'Giovanna Grilli Gatica', role: 'Abogada · Directora', desc: 'Más de 25 años de experiencia en litigación estratégica, derecho de familia y derecho laboral en La Araucanía.' },
+          { initials: 'VG', name: 'Viviana Grilli Ramos', role: 'Asesora Externa · Compliance y Datos', desc: 'Experta en compliance, protección de datos personales y asesoría regulatoria para empresas e instituciones.' },
+          { initials: 'MD', name: 'Maritza De Gregorio Álamos', role: 'Abogada', desc: 'Profesional del derecho integrada al equipo de Grilli Abogados para la atención y representación de clientes.' },
+          { initials: 'PV', name: 'Paola Vallejos De Gregorio', role: 'Psicóloga Psicolaboral', desc: 'Especialista en evaluación psicolaboral, selección de personal y acompañamiento psicosocial en procesos jurídicos.' },
+          { initials: 'HM', name: 'Heidy Morales Hueche', role: 'Asistente', desc: 'Apoyo integral en la gestión administrativa y atención a clientes del estudio.' },
+        ].map(m => (
+          <div class="bg-white rounded-2xl shadow-card hover:shadow-card-lg transition-shadow duration-300 overflow-hidden">
+            <div class="h-44 bg-navy-deep flex items-center justify-center">
+              <span class="font-cinzel text-gold text-5xl font-bold tracking-wide">{m.initials}</span>
+            </div>
+            <div class="p-6 border-t-4 border-gold">
+              <h3 class="font-cinzel text-navy-deep text-lg mb-1">{m.name}</h3>
+              <p class="text-gold text-xs font-bold uppercase tracking-widest font-inter mb-3">{m.role}</p>
+              <p class="text-warm text-sm leading-relaxed">{m.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Áreas de práctica -->
   <section class="bg-navy-deep py-16">
     <div class="max-w-6xl mx-auto px-6">
