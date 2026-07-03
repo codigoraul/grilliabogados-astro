@@ -87,7 +87,7 @@ export const services: Service[] = [
     tag: 'Alta Especialización',
     shortDesc: 'Demandamos responsabilidad médica y buscamos indemnización real para nuestros clientes. Mala praxis, errores quirúrgicos, diagnóstico tardío.',
     longDesc: 'Esta es una de nuestras áreas más relevantes y de mayor impacto jurídico. Demandamos responsabilidad médica y buscamos indemnización real para nuestros clientes en el sistema público y privado. Si usted o un familiar sufrió una negligencia médica, podemos ayudarle.',
-    image: '/prueba/images/servicios/negligencia-medica.webp',
+    image: '/images/servicios/negligencia-medica.webp',
     items: [
       'Mala praxis médica',
       'Errores quirúrgicos',
@@ -109,7 +109,7 @@ export const services: Service[] = [
     tag: 'Mediación',
     shortDesc: 'Facilitamos acuerdos efectivos, rápidos y menos costosos. Resolver conflictos sin llegar a juicio también es una victoria.',
     longDesc: 'Resolver conflictos sin llegar a juicio también es una victoria. Facilitamos acuerdos efectivos, rápidos y menos costosos que el proceso judicial. La mediación permite a las partes llegar a soluciones concretas y duraderas con la guía de un mediador profesional.',
-    image: '/prueba/images/servicios/mediacion.webp',
+    image: '/images/servicios/mediacion.webp',
     items: [
       'Mediación familiar',
       'Acuerdos patrimoniales',

@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   }));
 }
 
-const base = '/prueba/';
+const base = '/';
 const { post, related } = Astro.props as { post: Post; related: Post[] };
 ---
 
@@ -128,6 +128,12 @@ const { post, related } = Astro.props as { post: Post; related: Post[] };
   .wp-content figure { margin: 1.5em 0; }
   .wp-content figcaption { font-size: 0.8rem; color: rgb(140,140,142); text-align: center; margin-top: 0.5em; }
   .wp-content iframe { max-width: 100%; border-radius: 1rem; }
+  /* Videos embebidos (YouTube/Vimeo): ocupar todo el ancho manteniendo 16:9 */
+  .wp-content .wp-block-embed { margin: 1.5em 0; }
+  .wp-content .wp-block-embed__wrapper iframe,
+  .wp-content iframe[src*="youtube"],
+  .wp-content iframe[src*="youtu.be"],
+  .wp-content iframe[src*="vimeo"] { width: 100%; aspect-ratio: 16 / 9; height: auto; }
   .wp-content table { width: 100%; border-collapse: collapse; margin: 1.5em 0; font-size: 0.9rem; }
   .wp-content th, .wp-content td { border: 1px solid #e8e0d3; padding: 0.6em 0.9em; text-align: left; }
   .wp-content th { background: #F7F3EE; }

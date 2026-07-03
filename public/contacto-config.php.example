@@ -8,7 +8,7 @@
 
 return [
   // Ruta base del sitio (ej: '/prueba' o '')
-  'BASE_PATH' => '/prueba',
+  'BASE_PATH' => '',
   
   // URL completa del sitio
   'SITE_URL' => 'https://www.grilliabogados.cl',

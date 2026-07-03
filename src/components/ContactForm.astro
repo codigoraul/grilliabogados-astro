@@ -16,7 +16,7 @@ const { formId, title, subtitle = 'Sin costo inicial · Respuesta rápida', btnL
   <h3 class="font-cinzel text-navy-deep text-xl mb-1">{title}</h3>
   <p class="text-warm text-sm mb-6">{subtitle}</p>
 
-  <form id={formId} class="space-y-4" onsubmit="handleForm(event)" method="POST" action="/prueba/contacto.php" enctype="multipart/form-data">
+  <form id={formId} class="space-y-4" onsubmit="handleForm(event)" method="POST" action="/contacto.php" enctype="multipart/form-data">
     <!-- Honeypot anti-spam -->
     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
     
