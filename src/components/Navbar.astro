@@ -35,7 +35,7 @@ const currentPath = Astro.url.pathname;
               <>
                 <a
                   href={link.href}
-                  class={`flex items-center gap-1 px-3 py-2 rounded text-sm font-medium tracking-wide transition-colors duration-200
+                  class={`flex items-center gap-1 px-3 py-2 rounded text-[15.5px] font-medium tracking-wide transition-colors duration-200
                     ${currentPath.startsWith('/servicios')
                       ? 'text-gold'
                       : 'text-white/75 hover:text-gold hover:bg-gold/8'}`}
@@ -63,7 +63,7 @@ const currentPath = Astro.url.pathname;
             ) : (
               <a
                 href={link.href}
-                class={`px-3 py-2 rounded text-sm font-medium tracking-wide transition-colors duration-200 relative
+                class={`px-3 py-2 rounded text-[15.5px] font-medium tracking-wide transition-colors duration-200 relative
                   ${currentPath === link.href
                     ? 'text-gold'
                     : 'text-white/75 hover:text-gold hover:bg-gold/8'}`}
@@ -113,7 +113,7 @@ const currentPath = Astro.url.pathname;
       <div>
         <a
           href={link.href}
-          class={`block py-3 text-sm font-medium tracking-wide border-b border-white/5 transition-colors
+          class={`block py-3 text-[17px] font-medium tracking-wide border-b border-white/5 transition-colors
             ${currentPath === link.href || (link.dropdown && currentPath.startsWith('/servicios'))
               ? 'text-gold'
               : 'text-white/75 hover:text-gold'}`}
@@ -125,7 +125,7 @@ const currentPath = Astro.url.pathname;
             {link.dropdown.map(item => (
               <a
                 href={item.href}
-                class={`block py-2 text-xs tracking-wide transition-colors
+                class={`block py-2 text-[15px] tracking-wide transition-colors
                   ${currentPath === item.href ? 'text-gold' : 'text-white/50 hover:text-gold'}`}
               >
                 {item.label}

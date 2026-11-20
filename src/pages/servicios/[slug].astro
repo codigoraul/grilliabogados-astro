@@ -28,11 +28,11 @@ const base = '/';
       class="absolute inset-0 w-full h-full object-cover object-center"
       loading="eager"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/95 via-navy-deep/55 to-transparent"></div>
+    <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(4,6,15,0.88) 0%, rgba(10,13,25,0.55) 45%, rgba(4,6,15,0.95) 100%);"></div>
 
     <!-- Breadcrumb -->
     <div class="absolute top-[95px] sm:top-[105px] md:top-[100px] left-0 right-0">
-      <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-7xl mx-auto px-6">
         <nav class="flex items-center gap-2 text-white/50 text-xs font-inter">
           <a href={base} class="hover:text-gold transition-colors">Inicio</a>
           <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
@@ -43,7 +43,7 @@ const base = '/';
       </div>
     </div>
 
-    <div class="relative max-w-6xl mx-auto px-6 pb-12 pt-2 md:pt-0 w-full">
+    <div class="relative max-w-7xl mx-auto px-6 pb-12 pt-2 md:pt-0 w-full">
       <span
         class="hidden md:inline-block text-xs font-bold uppercase tracking-widest font-inter px-3 py-1 rounded-full md:mb-4"
         style={`background:${accentColor}22; color:${accentColor}; border:1px solid ${accentColor}44`}
@@ -59,11 +59,11 @@ const base = '/';
 
   <!-- Main content -->
   <section class="bg-cream-pale py-16">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class={`grid grid-cols-1 gap-12 ${service.slug === 'seleccion-personal' ? 'lg:grid-cols-2' : 'lg:grid-cols-3'}`}>
+    <div class="max-w-7xl mx-auto px-6">
+      <div class={`grid grid-cols-1 gap-12 ${service.slug === 'seleccion-personal' ? 'lg:grid-cols-[57%_1fr]' : 'lg:grid-cols-[1fr_480px]'}`}>
 
         <!-- Left: Content -->
-        <div class={service.slug === 'seleccion-personal' ? '' : 'lg:col-span-2'} class="space-y-10">
+        <div class={service.slug === 'seleccion-personal' ? '' : ''} class="space-y-10">
 
           <!-- Descripción -->
           <div>
@@ -147,7 +147,7 @@ const base = '/';
         </div>
 
         <!-- Right: Form sticky -->
-        <div class="lg:sticky lg:top-24 h-fit">
+        <div class="lg:sticky lg:top-24 h-fit w-full max-w-[480px] mx-auto lg:mx-0 lg:justify-self-end">
           <ContactForm
             formId={`form-${service.slug}`}
             title={service.formTitle}
@@ -167,7 +167,7 @@ const base = '/';
   <!-- Servicios relacionados -->
   {related.length > 0 && (
     <section class="bg-white py-16 border-t border-cream">
-      <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-7xl mx-auto px-6">
         <h2 class="font-cinzel text-navy-deep text-2xl mb-2">Servicios relacionados</h2>
         <div class="gold-divider mb-10"></div>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
